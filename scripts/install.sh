@@ -3,27 +3,16 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Source the scripts using the script directory path
-source "$SCRIPT_DIR/variables.sh"
-
-
-
-# rm -rf node_modules
-# pnpm install --shamefully-hoist --prod
-# zip -r lambda-express-server.zip .
-
-
-
-#!/bin/bash
+source $SCRIPT_DIR/variables.sh
 
 # Clean previous installs
-rm -rf node_modules
-rm -rf .pnpm
+source $SCRIPT_DIR/clean.sh
 
 # Install production dependencies
-pnpm install --prod
+pnpm install --shamefully-hoist --prod
 
 # Create a zip file for deployment
-zip -r function.zip . -x "*.git*" "node_modules/.pnpm/*"
+zip -r $FUNCTION_NAME.zip . -x "*.git*" 
 
 # Print the size of the zip file
-du -h function.zip
+du -h $FUNCTION_NAME.zip
