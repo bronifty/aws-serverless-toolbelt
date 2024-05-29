@@ -12,7 +12,7 @@ if (process.env.DEVELOPMENT) {
   const PORT = 8080;
 
   app.listen(PORT, () => {
-    console.log(`Server is running on PORT: ${PORT}`);
+    console.log(`http://localhost:${PORT}`);
   });
 }
 
