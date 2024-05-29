@@ -1,1 +1,39 @@
-{"statusCode":404,"headers":{"x-powered-by":"Express","content-type":"text/html; charset=utf-8","content-length":"21","etag":"W/\"15-FSNGaMR3LKP4yQQhnhdjL0o8JxQ\""},"isBase64Encoded":false,"body":"yes hello this is dog"}
+API Gateway: function-API
+arn:aws:execute-api:us-east-1:851725517932:g6q21b3wwi/*/*/function
+API endpoint: https://g6q21b3wwi.execute-api.us-east-1.amazonaws.com/default/function
+Details
+API type: HTTP
+Authorization: NONE
+CORS: Yes
+Detailed metrics enabled: No
+isComplexStatement: No
+Method: ANY
+Resource path: /function
+Service principal: apigateway.amazonaws.com
+Stage: default
+Statement ID: lambda-731b23e7-4a37-46db-b045-602c66bd36df
+
+
+
+1. Go to the IAM console > Roles
+2. Find the role used as the execution role for your Lambda@Edge function
+3. Edit the role's trust relationship
+4. Add the following trust policy statement to allow the `edgelambda.amazonaws.com` service to assume the role:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "edgelambda.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+
+5. Save the changes to the role's trust policy
+6. Return to the Lambda console and try deploying your function to Lambda@Edge again
