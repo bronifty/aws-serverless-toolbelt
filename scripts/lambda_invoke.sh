@@ -1,13 +1,13 @@
 #!/bin/bash
+
 # Get the directory where the script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Source the scripts using the script directory path
-source $SCRIPT_DIR/variables.sh
+source "$SCRIPT_DIR/variables.sh"
 
-# Clean previous installs
-source $SCRIPT_DIR/clean.sh
 
-# Install production dependencies
-pnpm install 
-pnpm dev
+aws lambda invoke \
+    --function-name $FUNCTION_NAME \
+    --payload 'JSON_STRING' \
+    outputfile.txt

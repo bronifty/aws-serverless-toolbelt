@@ -12,3 +12,4 @@ aws lambda create-function \
     --role $LAMBDA_ROLE \
     --handler $LAMBDA_HANDLER \
     --zip-file fileb://$FUNCTION_NAME.zip \
+    --layers ""

@@ -1,5 +1,5 @@
 # Makefile
-all: executable aws_sso_login dev test install deploy update clean test_variables lambda_list_functions lambda_delete_function lambda_delete_all
+all: executable aws_sso_login dev test install deploy update invoke list delete delete_all clean check_variables 
 
 executable:
 	chmod -R +x .
@@ -22,20 +22,23 @@ deploy:
 update:
 	./scripts/lambda_update.sh
 
+invoke:
+	./scripts/lambda_invoke.sh
+
+list:
+	./scripts/lambda_list_functions.sh
+
+delete:
+	./scripts/lambda_delete_function.sh
+
+delete_all:
+	./scripts/lambda_delete_all.sh	
+
 clean:
 	./scripts/clean.sh	
 
-test_variables:
-	./scripts/test_variables.sh
+check_variables:
+	./scripts/check_variables.sh
 
-lambda_list_functions:
-	./scripts/lambda_list_functions.sh
-
-lambda_delete_function:
-	./scripts/lambda_delete_function.sh
-
-lambda_delete_all:
-	./scripts/lambda_delete_all.sh	
-
-.PHONY: all executable aws_sso_login dev test install deploy update clean test_variables lambda_list_functions lambda_delete_function lambda_delete_all
+.PHONY: all executable aws_sso_login dev test install deploy update invoke list delete delete_all clean check_variables 
 
