@@ -1,5 +1,5 @@
 # Makefile
-all: executable update init go nats aws softwares nex clean check vim cpufreq sshkey docker cdk
+all: executable install deploy update
 
 executable:
 	chmod -R +x .
@@ -13,14 +13,5 @@ deploy:
 update:
 	./scripts/lambda_update.sh
 
-init:
-	./scripts/init.sh
-
-clean:
-	./scripts/clean.sh
-
-check:
-	./scripts/check.sh
-
-.PHONY: all executable update init go nats aws softwares nex clean check vim cpufreq sshkey docker cdk
+.PHONY: all executable install deploy update
 
