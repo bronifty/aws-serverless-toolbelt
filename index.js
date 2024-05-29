@@ -2,6 +2,10 @@ const serverless = require("serverless-http");
 const express = require("express");
 const app = express();
 
+app.all("*", (req, res) => {
+  res.status(404).send("yes hello this is dog");
+});
+
 // creating routes
 app.get("/api", (req, res) => {
   res.send("Hello world!");
