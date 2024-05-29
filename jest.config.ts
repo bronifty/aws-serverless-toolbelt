@@ -8,5 +8,5 @@ export default {
     "^.+\\.ts?$": "ts-jest",
   },
   clearMocks: true,
-  testMatch: ["**/tests/unit/*.test.ts"],
+  testMatch: ["**/*.test.ts"],
 };

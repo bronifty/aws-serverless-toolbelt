@@ -10,6 +10,9 @@ aws_sso_login:
 dev:
 	./scripts/dev.sh
 
+test:
+	./scripts/test.sh
+
 install: 
 	./scripts/install.sh
 
