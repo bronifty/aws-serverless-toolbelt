@@ -8,7 +8,9 @@
 
 ### TODO:
 
-- follow these instructions but set it up (the apigateway trigger) with cli and use apigatewayv2 with http api catchall stage route method etc proxy all traffic to the function; also set up another trigger that is proxying traffic from cloudfront cdn; this is going to require setting up an origin principal and also there are permissions that the function is going to need to have applied to it to assume role; actually i get confused on whether it is the function or the services (apigateway, cloudfront) that need the permissions applied to them to call the function; either way, that needs to be sorted out
+- follow these instructions but set it up (the apigateway trigger) with cli and use apigatewayv2 with http api catchall stage route method etc proxy all traffic to the function; also set up another trigger that is proxying traffic from cloudfront cdn; this is going to require setting up an origin principal and also there are permissions that the function is going to need to have applied to it to assume role; actually i get confused on whether it is the function or the services (apigateway, cloudfront) that need the permissions applied to them to call the function; either way, that needs to be sorted out.
+- also some of those scripts are going to be broken because i moved all the lambda ones into a subfolder and didn't change the way the variables are sourced in all of them. the directory structure and naming convention of the scripts esp w/r/t makefile will have to be updated for it to work (and even the makefile is not done; i'm not sure what exact shape that is going to take and whether these scripts are going to even be called from there or not).
+- i want to set up pipe scripts that query all or one of a resource and pipe it to a create or delete script rather than hardcoding variables
 
 # How to create a serverless express app:
 
