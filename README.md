@@ -6,7 +6,9 @@
 - What I would like to do is be able to get at any part of the serverless resources like lambda and apigatewayv2, cloudfront cdn and s3, even dynamodb and sqs and eventbridge, as well as step functions, perhaps some other stuff but those are the main ones. I want to have a system that puts these pieces together according to a formula, and then i want to incrementally incorporate those steps from cli into cdk and then finally bring some custom resources into winglang as libraries where they can be put to use in app products.
 - Along the way I can imagine this or some derivative of it could become some kind of toolbelt and dev tool for creating serverless apps and monitoring them. The cli is one tool, sdk is another; requests could be made from a react dashboard to get all the resources listed and have a multitentant app to manage those resources.
 
-.
+### TODO:
+
+- follow these instructions but set it up (the apigateway trigger) with cli and use apigatewayv2 with http api catchall stage route method etc proxy all traffic to the function; also set up another trigger that is proxying traffic from cloudfront cdn; this is going to require setting up an origin principal and also there are permissions that the function is going to need to have applied to it to assume role; actually i get confused on whether it is the function or the services (apigateway, cloudfront) that need the permissions applied to them to call the function; either way, that needs to be sorted out
 
 # How to create a serverless express app:
 
