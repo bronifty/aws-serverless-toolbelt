@@ -1,10 +1,12 @@
-# AWS Serverless Toolbox
+# AWS Serverless Toolbelt
 
 - The main goal is to deploy ssr apps like remix, vite, vike, next, etc
 - The orientation of the goal is from aws cli and work our way toward the cdk and then finally integrate into winglang
 - This repo is based on a combination of different repos, namely one by vinny for express with an apigateway trigger via console; another based on the default sam hello world app with a test apigateway event sent to a lambda shaped request reply handler which also includes a nice typescript config and a test setup; and finally there is some stuff in here in the reference folder from the vercel remix plugin for vite as well as my own material in the makefile and scripts for sys admin stuff.
 - What I would like to do is be able to get at any part of the serverless resources like lambda and apigatewayv2, cloudfront cdn and s3, even dynamodb and sqs and eventbridge, as well as step functions, perhaps some other stuff but those are the main ones. I want to have a system that puts these pieces together according to a formula, and then i want to incrementally incorporate those steps from cli into cdk and then finally bring some custom resources into winglang as libraries where they can be put to use in app products.
 - Along the way I can imagine this or some derivative of it could become some kind of toolbelt and dev tool for creating serverless apps and monitoring them. The cli is one tool, sdk is another; requests could be made from a react dashboard to get all the resources listed and have a multitentant app to manage those resources.
+
+.
 
 # How to create a serverless express app:
 
