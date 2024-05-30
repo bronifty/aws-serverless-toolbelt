@@ -6,4 +6,4 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 # Source the scripts using the script directory path
 source "$SCRIPT_DIR/../variables.sh"
 
-source "$SCRIPT_DIR/api_get_all.sh" | source "$SCRIPT_DIR/delete_all_apis.sh"
+source "$SCRIPT_DIR/api_get_all.sh" | source "$SCRIPT_DIR/api_delete_all.sh"
