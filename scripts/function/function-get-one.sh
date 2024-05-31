@@ -14,4 +14,4 @@ else
 fi
 
 # Get the function configuration
-aws function get-function-configuration --function-name $FUNCTION_NAME
+aws lambda get-function-configuration --function-name $FUNCTION_NAME

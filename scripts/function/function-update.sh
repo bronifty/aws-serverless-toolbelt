@@ -14,4 +14,4 @@ source $SCRIPT_DIR/../variables.sh
    fi
 
 
-aws function update-function-code --function-name $FUNCTION_NAME --zip-file fileb://app/$FUNCTION_NAME.zip
+aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://app/$FUNCTION_NAME.zip

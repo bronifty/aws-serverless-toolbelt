@@ -13,7 +13,7 @@ source $SCRIPT_DIR/../variables.sh
        FUNCTION_NAME=$1  # Set the function name from the first script argument
    fi
 
-aws function invoke \
+aws lambda invoke \
     --function-name $FUNCTION_NAME \
     --cli-binary-format raw-in-base64-out \
     --payload '{"exampleKey":"exampleValue"}' \
