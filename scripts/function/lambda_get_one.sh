@@ -3,7 +3,7 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Source the scripts using the script directory path
-source $SCRIPT_DIR/variables.sh
+source $SCRIPT_DIR/../variables.sh
 
   # Check if a function name was passed as an argument
    if [ -z "$1" ]; then

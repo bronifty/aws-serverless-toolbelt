@@ -12,7 +12,7 @@ app.get("/api", (req, res) => {
 });
 
 // to run and test locally
-if (process.env.DEVELOPMENT) {
+if (process.env.NODE_ENV === "development") {
   const PORT = 8080;
 
   app.listen(PORT, () => {
