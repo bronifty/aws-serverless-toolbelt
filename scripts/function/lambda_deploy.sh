@@ -1,15 +1,14 @@
-   #!/bin/bash
+#!/bin/bash
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-   # Get the directory where the script is located
-   SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# Source the scripts using the script directory path
+source $SCRIPT_DIR/variables.sh
 
-   # Source the scripts using the script directory path
-   source "$SCRIPT_DIR/../variables.sh"
-
-   # Check if a function name was passed as an argument
+  # Check if a function name was passed as an argument
    if [ -z "$1" ]; then
+       echo "No function name provided. Using default function name."
        FUNCTION_NAME=$DEFAULT_FUNCTION_NAME
-       echo "No function name provided. Using default function name: $FUNCTION_NAME"
    else
        FUNCTION_NAME=$1  # Set the function name from the first script argument
    fi

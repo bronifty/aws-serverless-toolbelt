@@ -1,13 +1,17 @@
 #!/bin/bash
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-# Check if a function name was passed as an argument
-if [ -z "$1" ]; then
-    echo "Usage: $0 <function-name>"
-    exit 1
-fi
+# Source the scripts using the script directory path
+source $SCRIPT_DIR/variables.sh
 
-# Get the function name from the command line
-FUNCTION_NAME=$1
+  # Check if a function name was passed as an argument
+   if [ -z "$1" ]; then
+       echo "No function name provided. Using default function name."
+       FUNCTION_NAME=$DEFAULT_FUNCTION_NAME
+   else
+       FUNCTION_NAME=$1  # Set the function name from the first script argument
+   fi
 
 # Get the function configuration
 aws lambda get-function-configuration --function-name $FUNCTION_NAME
