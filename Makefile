@@ -28,6 +28,7 @@ app-install:
 # functions 
 # call with function=<function-name>
 # eg make function-deploy function=my-function
+# a call with no args will have default args applied from the variables file
 function-deploy:
 	./scripts/function/function-deploy.sh $(function)
 
