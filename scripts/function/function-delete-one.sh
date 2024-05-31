@@ -15,4 +15,4 @@ source $SCRIPT_DIR/../variables.sh
 
 # Delete a function function given its name
 function_name=$1
-aws function delete-function --function-name "$function_name"
+aws lambda delete-function --function-name "$function_name"

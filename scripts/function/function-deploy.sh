@@ -13,9 +13,10 @@ source $SCRIPT_DIR/../variables.sh
        FUNCTION_NAME=$1  # Set the function name from the first script argument
    fi
 
-   aws function create-function \
+   aws lambda create-function \
        --function-name $FUNCTION_NAME \
-       --runtime $function_RUNTIME \
-       --role $function_ROLE \
-       --handler $function_HANDLER \
+       --runtime $DEFAULT_FUNCTION_RUNTIME \
+       --role $DEFAULT_FUNCTION_ROLE \
+       --handler $DEFAULT_FUNCTION_HANDLER \
        --zip-file fileb://app/$FUNCTION_NAME.zip 
+
