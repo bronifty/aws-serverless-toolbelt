@@ -18,4 +18,4 @@ source $SCRIPT_DIR/../variables.sh
        --runtime $LAMBDA_RUNTIME \
        --role $LAMBDA_ROLE \
        --handler $LAMBDA_HANDLER \
-       --zip-file fileb://$FUNCTION_NAME.zip 
+       --zip-file fileb://app/$FUNCTION_NAME.zip 

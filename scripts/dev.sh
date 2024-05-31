@@ -9,6 +9,6 @@ source $SCRIPT_DIR/variables.sh
 source $SCRIPT_DIR/clean.sh
 
 cd $SCRIPT_DIR/../app
-# Install production dependencies
+# Install development dependencies
 pnpm install 
 pnpm dev
