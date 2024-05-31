@@ -43,8 +43,11 @@ lambda_delete_all:
 	./scripts/function/lambda_delete_function.sh
 
 # api
-api_trigger_attach:
-	./scripts/api/api_trigger_attach.sh
+# call with arg like so:
+# make api_add_one api=<api_name> function=<function_name>
+# no arg will use defaults from variables file
+api_add_one:
+	./scripts/api/api_add_one.sh $(api) $(function)
 
 
 
