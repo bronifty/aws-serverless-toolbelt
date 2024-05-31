@@ -29,20 +29,25 @@ lambda_invoke:
 # call with arg like so: 
 # make lambda_get_one arg=function_name
 lambda_get_one:
-	./scripts/lambda/lambda_get_one.sh $(arg) 
+	./scripts/function/lambda_get_one.sh $(arg) 
 
 lambda_get_all:
-	./scripts/lambda/lambda_get_all.sh
+	./scripts/function/lambda_get_all.sh
 
 # call with arg like so:
 # make lambda_delete_one arg=function_name
 lambda_delete_one:
-	./scripts/lambda/lambda_delete_one.sh $(arg)
+	./scripts/function/lambda_delete_one.sh $(arg)
 
 lambda_delete_all:
-	./scripts/lambda/lambda_delete_function.sh
+	./scripts/function/lambda_delete_function.sh
 
 # api
+api_trigger_attach:
+	./scripts/api/api_trigger_attach.sh
+
+
+
 # call with arg like so: 
 # make lambda_get_one arg=function_name
 api_get_one:
