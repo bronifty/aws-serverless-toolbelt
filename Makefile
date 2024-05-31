@@ -16,6 +16,7 @@ test:
 install: 
 	./scripts/install.sh
 
+# lambdas
 lambda_deploy:
 	./scripts/lambda_deploy.sh
 
@@ -41,11 +42,9 @@ lambda_delete_one:
 lambda_delete_all:
 	./scripts/lambda/lambda_delete_function.sh
 
-delete_all:
-	./scripts/lambda_delete_all.sh	
-
+# apigateways
 add_trigger_http:
-	./scripts/lambda_add_trigger_http_api.sh
+	./scripts/apigateway/add_trigger_http.sh
 
 clean:
 	./scripts/clean.sh	
