@@ -1,80 +1,71 @@
 # Makefile
-all: executable aws_sso_login dev test install deploy update invoke list delete delete_all clean check_variables 
+all: executable aws-sso-login app-dev app-test app-install app-deploy app-update app-invoke app-list app-delete app-delete-all clean check-variables cdk-bootstrap
 
 executable:
 	chmod -R +x .
 
-aws_sso_login:
-	./scripts/aws_sso_login.sh
+aws-sso-login:
+	./scripts/aws-sso-login.sh
 
-dev:
-	./scripts/dev.sh
+check-variables:
+	./scripts/check-variables.sh
 
-test:
-	./scripts/test.sh
+cdk-bootstrap:
+	./scripts/cdk-bootstrap.sh
 
-install: 
-	./scripts/install.sh
+app-clean:
+	./scripts/app-clean.sh	
 
-# function
-lambda_deploy:
-	./scripts/function/lambda_deploy.sh
+app-dev:
+	./scripts/app-dev.sh
 
-lambda_update:
-	./scripts/function/lambda_update.sh
+app-test:
+	./scripts/app-test.sh
 
-lambda_invoke:
-	./scripts/function/lambda_invoke.sh
+app-install: 
+	./scripts/app-install.sh
 
-# call with arg like so: 
-# make lambda_get_one arg=function_name
-lambda_get_one:
-	./scripts/function/lambda_get_one.sh $(arg) 
+# functions 
+# call with function=<function-name>
+# eg make function-deploy function=my-function
+function-deploy:
+	./scripts/function/function-deploy.sh $(function)
 
-lambda_get_all:
-	./scripts/function/lambda_get_all.sh
+function-update:
+	./scripts/function/function-update.sh $(function)
 
-# call with arg like so:
-# make lambda_delete_one arg=function_name
-lambda_delete_one:
-	./scripts/function/lambda_delete_one.sh $(arg)
+function-invoke:
+	./scripts/function/function-invoke.sh $(function)
 
-lambda_delete_all:
-	./scripts/function/lambda_delete_function.sh
+function-get-one:
+	./scripts/function/function-get-one.sh $(function) 
 
-# api
-# call with arg like so:
-# make api_add_one api=<api_name> function=<function_name>
-# no arg will use defaults from variables file
-api_add_one:
-	./scripts/api/api_add_one.sh $(api) $(function)
+function-get-all:
+	./scripts/function/function-get-all.sh
 
+function-delete-one:
+	./scripts/function/function-delete-one.sh $(function)
 
+function-delete-all:
+	./scripts/function/function-delete-function.sh
 
-# call with arg like so: 
-# make lambda_get_one arg=function_name
-api_get_one:
-	./scripts/api/api_get_one.sh $(arg) 
+# apis 
+# call with api=<api-name> function=<function-name>
+# eg make api-add-one api=my-api function=my-function
+api-add-one:
+	./scripts/api/api-add-one.sh $(api) $(function)
 
-api_get_all:
-	./scripts/api/api_get_all.sh
+api-get-one:
+	./scripts/api/api-get-one.sh $(api) 
 
-# call with arg like so:
-# make api_delete_one arg=function_name
-api_delete_one:
-	./scripts/api/api_delete_one.sh $(arg)
+api-get-all:
+	./scripts/api/api-get-all.sh
 
-api_delete_all:
-	./scripts/api/api_delete_function.sh
+api-delete-one:
+	./scripts/api/api-delete-one.sh $(api)
 
-clean:
-	./scripts/clean.sh	
+api-delete-all:
+	./scripts/api/api-delete-function.sh
 
-check_variables:
-	./scripts/check_variables.sh
-
-cdk_bootstrap:
-	./scripts/cdk_bootstrap.sh
-
-.PHONY: all executable aws_sso_login dev test install deploy update invoke list delete delete_all clean check_variables cdk_bootstrap
+.PHONY: all executable aws-sso-login app-dev app-test app-install app-deploy app-update app-invoke app-list app-delete app-delete-all clean check-variables cdk-bootstrap
 

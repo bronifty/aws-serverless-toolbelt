@@ -13,6 +13,8 @@ source $SCRIPT_DIR/../variables.sh
        FUNCTION_NAME=$1  # Set the function name from the first script argument
    fi
 
-# Delete a Lambda function given its name
-function_name=$1
-aws lambda delete-function --function-name "$function_name"
+aws function invoke \
+    --function-name $FUNCTION_NAME \
+    --cli-binary-format raw-in-base64-out \
+    --payload '{"exampleKey":"exampleValue"}' \
+    outputfile.txt

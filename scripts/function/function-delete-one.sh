@@ -13,5 +13,6 @@ source $SCRIPT_DIR/../variables.sh
        FUNCTION_NAME=$1  # Set the function name from the first script argument
    fi
 
-
-aws lambda update-function-code --function-name $FUNCTION_NAME --zip-file fileb://app/$FUNCTION_NAME.zip
+# Delete a function function given its name
+function_name=$1
+aws function delete-function --function-name "$function_name"

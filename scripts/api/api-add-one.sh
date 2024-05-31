@@ -25,4 +25,4 @@ else
     FUNCTION_NAME=$2  # Set the function name from the first script argument
 fi
 
-aws apigatewayv2 create-api --name $API_NAME --protocol-type 'HTTP' --target arn:aws:lambda:$REGION:$ACCOUNT_ID:function:$FUNCTION_NAME
+aws apigatewayv2 create-api --name $API_NAME --protocol-type 'HTTP' --target arn:aws:function:$REGION:$ACCOUNT_ID:function:$FUNCTION_NAME

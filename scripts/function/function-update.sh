@@ -13,8 +13,5 @@ source $SCRIPT_DIR/../variables.sh
        FUNCTION_NAME=$1  # Set the function name from the first script argument
    fi
 
-aws lambda invoke \
-    --function-name $FUNCTION_NAME \
-    --cli-binary-format raw-in-base64-out \
-    --payload '{"exampleKey":"exampleValue"}' \
-    outputfile.txt
+
+aws function update-function-code --function-name $FUNCTION_NAME --zip-file fileb://app/$FUNCTION_NAME.zip
