@@ -16,15 +16,15 @@ test:
 install: 
 	./scripts/install.sh
 
-# lambdas
+# function
 lambda_deploy:
-	./scripts/lambda_deploy.sh
+	./scripts/function/lambda_deploy.sh
 
 lambda_update:
-	./scripts/lambda_update.sh
+	./scripts/function/lambda_update.sh
 
 lambda_invoke:
-	./scripts/lambda_invoke.sh
+	./scripts/function/lambda_invoke.sh
 
 # call with arg like so: 
 # make lambda_get_one arg=function_name
@@ -42,9 +42,22 @@ lambda_delete_one:
 lambda_delete_all:
 	./scripts/lambda/lambda_delete_function.sh
 
-# apigateways
-add_trigger_http:
-	./scripts/apigateway/add_trigger_http.sh
+# api
+# call with arg like so: 
+# make lambda_get_one arg=function_name
+api_get_one:
+	./scripts/api/api_get_one.sh $(arg) 
+
+api_get_all:
+	./scripts/api/api_get_all.sh
+
+# call with arg like so:
+# make api_delete_one arg=function_name
+api_delete_one:
+	./scripts/api/api_delete_one.sh $(arg)
+
+api_delete_all:
+	./scripts/api/api_delete_function.sh
 
 clean:
 	./scripts/clean.sh	
