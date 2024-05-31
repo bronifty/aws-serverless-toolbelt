@@ -16,20 +16,30 @@ test:
 install: 
 	./scripts/install.sh
 
-deploy:
+lambda_deploy:
 	./scripts/lambda_deploy.sh
 
-update:
+lambda_update:
 	./scripts/lambda_update.sh
 
-invoke:
+lambda_invoke:
 	./scripts/lambda_invoke.sh
 
-list:
-	./scripts/lambda_list_functions.sh
+# call with arg like so: 
+# make lambda_get_one arg=function_name
+lambda_get_one:
+	./scripts/lambda/lambda_get_one.sh $(arg) 
 
-delete:
-	./scripts/lambda_delete_function.sh
+lambda_get_all:
+	./scripts/lambda/lambda_get_all.sh
+
+# call with arg like so:
+# make lambda_delete_one arg=function_name
+lambda_delete_one:
+	./scripts/lambda/lambda_delete_one.sh $(arg)
+
+lambda_delete_all:
+	./scripts/lambda/lambda_delete_function.sh
 
 delete_all:
 	./scripts/lambda_delete_all.sh	

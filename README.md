@@ -1,5 +1,18 @@
 # AWS Serverless Toolbelt
 
+steps:
+
+1. make executable
+2. aws_sso_login
+3. dev
+4. test
+5. install
+6. aws_lambda_list
+7. delete all...
+8. deploy
+9. invoke
+10. set up triggers...
+
 - The main goal is to deploy ssr apps like remix, vite, vike, next, etc
 - The orientation of the goal is from aws cli and work our way toward the cdk and then finally integrate into winglang
 - This repo is based on a combination of different repos, namely one by vinny for express with an apigateway trigger via console; another based on the default sam hello world app with a test apigateway event sent to a lambda shaped request reply handler which also includes a nice typescript config and a test setup; and finally there is some stuff in here in the reference folder from the vercel remix plugin for vite as well as my own material in the makefile and scripts for sys admin stuff.

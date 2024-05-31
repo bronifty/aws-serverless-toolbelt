@@ -1,12 +1,8 @@
 #!/bin/bash
 
-# Get the directory where the script is located
+# Pipe the output of get_all_lambdas.sh to delete_lambda.sh to delete all Lambda functions
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-# Source the scripts using the script directory path
-source "$SCRIPT_DIR/../variables.sh"
-
-aws lambda list-functions --query 'Functions[*].FunctionName' --output text | while read -r function_name; do
-    aws lambda delete-function --function-name "$function_name"
-    echo "Deleted function $function_name"
-done
+"$SCRIPT_DIR/lambda_get_all.sh" | while read function_name; do
+  "$SCRIPT_DIR/lambda_delete_one.sh" "$function_name"
+  done
