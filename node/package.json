@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "compile": "tsc"
+    "dev": "tsx watch generic.ts",
+    "compile": "tsc",
+    "start": "pnpm compile && node dist/generic.js"
   },
   "keywords": [],
   "author": "",
