@@ -4,6 +4,7 @@ all: executable aws-sso-login app-dev app-test app-install app-deploy app-update
 executable:
 	chmod -R +x .
 
+# cloud-admin
 login:
 	./scripts/cloud-admin/login.sh
 
@@ -13,6 +14,7 @@ bootstrap:
 check-variables:
 	./scripts/check-variables.sh
 
+# app-admin
 app-clean:
 	./scripts/app-clean.sh	
 
