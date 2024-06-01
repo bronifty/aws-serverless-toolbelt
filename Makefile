@@ -31,6 +31,12 @@ app-install:
 # call with function=<function-name>
 # eg make function-deploy function=my-function
 # a call with no args will have default args applied from the variables file
+function-get-all:
+	./scripts/function/function-get-all.sh
+
+function-get-one:
+	./scripts/function/function-get-one.sh $(function) 
+
 function-deploy:
 	./scripts/function/function-deploy.sh $(function)
 
@@ -39,12 +45,6 @@ function-update:
 
 function-invoke:
 	./scripts/function/function-invoke.sh $(function)
-
-function-get-one:
-	./scripts/function/function-get-one.sh $(function) 
-
-function-get-all:
-	./scripts/function/function-get-all.sh
 
 function-delete-one:
 	./scripts/function/function-delete-one.sh $(function)
@@ -55,14 +55,14 @@ function-delete-all:
 # apis 
 # call with api=<api-name> function=<function-name>
 # eg make api-add-one api=my-api function=my-function
-api-add-one:
-	./scripts/api/api-add-one.sh $(api) $(function)
-
 api-get-all:
 	./scripts/api/api-get-all.sh
 
 api-get-one:
 	./scripts/api/api-get-one.sh $(api) 
+
+api-add-one:
+	./scripts/api/api-add-one.sh $(api) $(function)
 
 api-delete-one:
 	./scripts/api/api-delete-one.sh $(api)
