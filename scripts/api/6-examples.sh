@@ -2,13 +2,15 @@
 aws apigatewayv2 create-api --name 'MyAPI' --protocol-type 'HTTP' --target arn:aws:lambda:us-east-1:123456789012:function:myFunction
 
 # Create Integration
-aws apigatewayv2 create-integration --api-id a1b2c3d4 --integration-type AWS_PROXY --integration-method POST --integration-uri arn:aws:lambda:us-east-1:123456789012:function:myFunction
+aws apigatewayv2 create-integration --api-id API_ID --integration-type AWS_PROXY --integration-method POST --integration-uri arn:aws:apigateway:REGION:lambda:path/2015-03-31/functions/arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTION_NAME/invocations --payload-format-version 2.0
+
+
 
 # Create Route
-aws apigatewayv2 create-route --api-id a1b2c3d4 --route-key 'GET /todos' --target integrations/9876xyz
+aws apigatewayv2 create-route --api-id API_ID --route-key '$default' --target integrations/INTEGRATION_ID
 
 # Deploy API
-aws apigatewayv2 create-deployment --api-id a1b2c3d4 --stage-name dev
+aws apigatewayv2 create-deployment --api-id API_ID --stage-name STAGE_NAME
 
 # Add Permission
-aws lambda add-permission --function-name myFunction --statement-id apigateway-test --action lambda:InvokeFunction --principal apigateway.amazonaws.com --source-arn arn:aws:execute-api:us-east-1:123456789012:a1b2c3d4/*/*/*
+aws lambda add-permission --function-name FUNCTION_NAME --statement-id apigateway-$default --action lambda:InvokeFunction --principal apigateway.amazonaws.com --source-arn "arn:aws:execute-api:REGION:ACCOUNT_ID:API_ID/*/$default"
