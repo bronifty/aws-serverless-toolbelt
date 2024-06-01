@@ -1,5 +1,5 @@
 # Makefile
-all: executable aws-sso-login app-dev app-test app-install app-deploy app-update app-invoke app-list app-delete app-delete-all clean check-variables cdk-bootstrap
+all: engine-start engine-dev engine-install api-get-all api-get-one api-add-one api-delete-one api-delete-all function-get-all function-get-one function-deploy function-update function-invoke function-delete-one function-delete-all clean check-variables cdk-bootstrap
 
 # desktop-admin
 executable:
@@ -81,5 +81,8 @@ engine-dev:
 engine-start:
 	pnpm --prefix ./engine start  
 
-.PHONY: all executable aws-sso-login app-dev app-test app-install app-deploy app-update app-invoke app-list app-delete app-delete-all clean check-variables cdk-bootstrap
+
+
+
+.PHONY: all engine-start engine-dev engine-install api-get-all api-get-one api-add-one api-delete-one api-delete-all function-get-all function-get-one function-deploy function-update function-invoke function-delete-one function-delete-all clean check-variables cdk-bootstrap
 
