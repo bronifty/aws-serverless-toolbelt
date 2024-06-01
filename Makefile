@@ -15,7 +15,7 @@ check-variables:
 	./scripts/check-variables.sh
 
 # app-admin
-app-clean:
+clean:
 	./scripts/app-clean.sh	
 
 app-dev:
