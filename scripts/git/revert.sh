@@ -9,3 +9,7 @@ git checkout -- .
 # revert to specific commit and push
 # git revert <commit-hash>
 # git push origin <branch-name>
+
+# git reflog is git log --decorate including entries that have been reset or rebased
+
+# git revert is checking out of a previous commit and into a new commit
