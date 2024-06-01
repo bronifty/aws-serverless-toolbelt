@@ -9,6 +9,7 @@ const execAsync = util.promisify(exec);
  * @param {string} resourceName - Name of the resource.
  * @returns {Promise<string>} - A promise that resolves to the ARN or ID of the resource.
  */
+
 async function getResourceArnOrId(
   resourceType: "api" | "lambda",
   resourceName: string
@@ -16,7 +17,8 @@ async function getResourceArnOrId(
   let command;
 
   if (resourceType === "api") {
-    command = `aws apigatewayv2 get-apis | jq -r --arg API_NAME "${resourceName}" '.Items[] | select(.Name == $API_NAME) | .ApiId'`;
+    // Updated to fetch ARN instead of ApiId
+    command = `aws apigatewayv2 get-apis | jq -r --arg API_NAME "${resourceName}" '.Items[] | select(.Name == $API_NAME) | .ApiEndpoint'`;
   } else if (resourceType === "lambda") {
     command = `aws lambda list-functions | jq -r --arg FUNCTION_NAME "${resourceName}" '.Functions[] | select(.FunctionName == $FUNCTION_NAME) | .FunctionArn'`;
   } else {
@@ -41,5 +43,5 @@ getResourceArnOrId("lambda", "function")
   .catch((err) => console.error(err));
 
 getResourceArnOrId("api", "api")
-  .then((apiId) => console.log("API ID:", apiId))
+  .then((apiId) => console.log("API ARN:", apiId))
   .catch((err) => console.error(err));
