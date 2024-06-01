@@ -1,6 +1,7 @@
 # Makefile
 all: executable aws-sso-login app-dev app-test app-install app-deploy app-update app-invoke app-list app-delete app-delete-all clean check-variables cdk-bootstrap
 
+# desktop-admin
 executable:
 	chmod -R +x .
 
