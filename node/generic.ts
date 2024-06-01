@@ -1,5 +1,6 @@
-const { exec } = require("child_process");
-const util = require("util");
+import { exec } from "child_process";
+import util from "util";
+
 const execAsync = util.promisify(exec);
 
 /**
@@ -8,7 +9,10 @@ const execAsync = util.promisify(exec);
  * @param {string} resourceName - Name of the resource.
  * @returns {Promise<string>} - A promise that resolves to the ARN or ID of the resource.
  */
-async function getResourceArnOrId(resourceType, resourceName) {
+async function getResourceArnOrId(
+  resourceType: "api" | "lambda",
+  resourceName: string
+) {
   let command;
 
   if (resourceType === "api") {
