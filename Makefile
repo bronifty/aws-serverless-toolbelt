@@ -4,14 +4,14 @@ all: executable aws-sso-login app-dev app-test app-install app-deploy app-update
 executable:
 	chmod -R +x .
 
-aws-sso-login:
-	./scripts/aws-sso-login.sh
+login:
+	./scripts/cloud-admin/login.sh
+
+bootstrap:
+	./scripts/cloud-admin/bootstrap.sh
 
 check-variables:
 	./scripts/check-variables.sh
-
-cdk-bootstrap:
-	./scripts/cdk-bootstrap.sh
 
 app-clean:
 	./scripts/app-clean.sh	
