@@ -66,40 +66,12 @@ getResourceArn("apigatewayv2", "api")
   .then((apiArn) => console.log("API ARN:", apiArn))
   .catch((err) => console.error(err));
 
-//   {
-//     "Items": [
-//         {
-//             "ApiEndpoint": "https://l4bykgc6k6.execute-api.us-east-1.amazonaws.com",
-//             "ApiId": "l4bykgc6k6",
-//             "ApiKeySelectionExpression": "$request.header.x-api-key",
-//             "CreatedDate": "2024-05-31T02:43:57+00:00",
-//             "DisableExecuteApiEndpoint": false,
-//             "Name": "api",
-//             "ProtocolType": "HTTP",
-//             "RouteSelectionExpression": "$request.method $request.path",
-//             "Tags": {}
-//         }
-//     ]
-// }
-
-//   API_ID=$(aws apigatewayv2 get-apis | jq -r --arg API_NAME "$API_NAME" '.Items[] | select(.Name == $API_NAME) | .ApiId')
-
-// if [ -z "$API_ID" ]; then
-//     echo "API with name '$API_NAME' not found."
-//     exit 1
-// else
-//     # Construct the ARN for the API
-//     REGION=$(aws configure get region)
+// ----------------------------
+// REGION=$(aws configure get region)
 //     ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
 //     API_ARN="arn:aws:apigateway:$REGION::$ACCOUNT_ID:/apis/$API_ID"
 
-//     # Use the ARN to get the API details
-//     echo "Fetching details for API ARN: $API_ARN"
-//     aws apigatewayv2 get-api --api-id $API_ID
-// fi
-
-// --------------------------------
-
+// ----------------------------
 // aws apigatewayv2 get-apis --query 'Items[*].ApiEndpoint'
 
 // {
@@ -119,6 +91,7 @@ getResourceArn("apigatewayv2", "api")
 // }
 
 // --------------------------------
+// aws lambda list-functions --query 'Functions[*].FunctionName'
 // {
 //   "Functions": [
 //       {
