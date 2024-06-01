@@ -71,5 +71,15 @@ api-delete-one:
 api-delete-all:
 	./scripts/api/api-delete-function.sh
 
+# engine
+engine-install:
+	pnpm --prefix ./engine install
+
+engine-dev:
+	pnpm --prefix ./engine dev 
+
+engine-start:
+	pnpm --prefix ./engine start  
+
 .PHONY: all executable aws-sso-login app-dev app-test app-install app-deploy app-update app-invoke app-list app-delete app-delete-all clean check-variables cdk-bootstrap
 
