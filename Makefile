@@ -58,11 +58,11 @@ function-delete-all:
 api-add-one:
 	./scripts/api/api-add-one.sh $(api) $(function)
 
-api-get-one:
-	./scripts/api/api-get-one.sh $(api) 
-
 api-get-all:
 	./scripts/api/api-get-all.sh
+
+api-get-one:
+	./scripts/api/api-get-one.sh $(api) 
 
 api-delete-one:
 	./scripts/api/api-delete-one.sh $(api)
