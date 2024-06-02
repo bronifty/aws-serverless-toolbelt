@@ -1,5 +1,5 @@
 #!/bin/bash
-aws apigatewayv2 get-apis 
+aws apigatewayv2 get-apis --query 'Items[*].ApiId'
 
 # aws apigatewayv2 get-apis --query 'Items[*].ApiEndpoint'
 

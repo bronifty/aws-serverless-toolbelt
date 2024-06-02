@@ -8,12 +8,12 @@ executable:
 check-variables:
 	./scripts/admin-desktop/check-variables.sh
 
-# cloud-admin
+# admin-cloud
 login:
-	./scripts/cloud-admin/login.sh
+	./scripts/admin-cloud/login.sh
 
 bootstrap:
-	./scripts/cloud-admin/bootstrap.sh
+	./scripts/admin-cloud/bootstrap.sh
 
 # app-admin
 clean:
