@@ -1,6 +1,9 @@
 # AWS Serverless Toolbelt
 
-https://www.npmjs.com/package/aws4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- https://www.npmjs.com/package/aws4
+- https://thepassle.netlify.app/blog/practical-barrel-file-guide-for-library-authors
+- https://awscli.amazonaws.com/v2/documentation/api/latest/reference/lambda/get-function.html
+
 steps:
 
 1. make executable
