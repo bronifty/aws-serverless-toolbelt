@@ -81,6 +81,10 @@ engine-dev:
 engine-start:
 	pnpm --prefix ./engine start  
 
+engine-clean:
+	pnpm --prefix ./engine clean
+
+
 
 
 

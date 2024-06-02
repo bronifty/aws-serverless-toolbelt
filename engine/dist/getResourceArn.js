@@ -7,7 +7,7 @@ const execAsync = util.promisify(exec);
  * @param {string} resourceName - Name of the resource.
  * @returns {Promise<string>} - A promise that resolves to the ARN of the resource.
  */
-async function getResourceArn(resourceType, resourceName) {
+export async function getResourceArn(resourceType, resourceName) {
     let command;
     // Execute the command and extract the stdout, then trim any extra whitespace
     const regionResult = await execAsync("aws configure get region --output text");

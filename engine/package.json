@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "tsx watch getResourceArn.ts",
     "compile": "tsc",
-    "start": "pnpm compile && node dist/getResourceArn.js"
+    "start": "pnpm compile && node dist/getResourceArn.js",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",
