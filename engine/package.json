@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch generic.ts",
+    "dev": "tsx watch getResourceArn.ts",
     "compile": "tsc",
-    "start": "pnpm compile && node dist/generic.js"
+    "start": "pnpm compile && node dist/getResourceArn.js"
   },
   "keywords": [],
   "author": "",
