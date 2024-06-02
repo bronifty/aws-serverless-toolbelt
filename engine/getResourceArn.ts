@@ -10,7 +10,7 @@ const execAsync = util.promisify(exec);
  * @returns {Promise<string>} - A promise that resolves to the ARN of the resource.
  */
 
-async function getResourceArn(
+export async function getResourceArn(
   resourceType: "lambda" | "api",
   resourceName: string
 ) {
